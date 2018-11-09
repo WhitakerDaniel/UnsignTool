@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// For information on ImageRemoveCertificate, see: https://docs.microsoft.com/en-us/windows/desktop/api/imagehlp/nf-imagehlp-imageremovecertificate
+
 namespace Unsigntool
 {
     class Program
     {
+        // Manually pull in ImageHlp.dll so we can call ImageRemoveCertificate
+
         [System.Runtime.InteropServices.DllImport("Imagehlp.dll ")]
         private static extern bool ImageRemoveCertificate(IntPtr handle, int index);
 
